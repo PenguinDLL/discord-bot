@@ -3,18 +3,18 @@ const client = new discord.Client();
 
 // specify tokens here
 const token = '';
-let alive_channel_id = '';
-let dead_channel_id = '';
-let bot_channel_id = '';
+const alive_channel_id = '';
+const dead_channel_id = '';
+const bot_channel_id = '';
 
 let connection_alive = undefined;
 let connection_dead = undefined;
 let alive_streams = {};
 
-client.user.setUsername('SuperBot')
+client.user.setUsername('SuperBot');
 
 // when bot finished signing in, it joins the two channels
-client.once('ready', () => {
+client.once('ready', async () => {
     // connect to bot channel
     const channel_bot = client.channels.cache.get(bot_channel_id);
     await channel_bot.join();
