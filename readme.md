@@ -10,6 +10,12 @@ Node package manager : 7.0.14 (automatically installed along with Node)
 
 Packages: discord.js, eslint, @discordjs/opus
 
+## Installation
+
+Install nvm and node if it isn't already done (see `dev.sh` for instructions).
+
+Then run `./dev.sh start`. It will load your components.
+
 ## Possible optimizations
 
 Each audio stream continues, even if the user doesn't speak. It would require less processing power to just check when user is speaking before starting stream. Or maybe just pause the stream when user stops talking.
