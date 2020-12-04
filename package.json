@@ -1,0 +1,21 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot to allow users from a channel to listen to another channel. The intended purpose of this bot is to allow dead players in Among Us to hear the discussions of those that are alive.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "among",
+    "us"
+  ],
+  "author": "PenguinDLL",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "eslint": "^7.14.0"
+  }
+}
