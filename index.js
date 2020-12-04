@@ -40,6 +40,13 @@ async function leave_amongus_channels(){
     if (connection_dead !== undefined){
         connection_dead.disconnect();
     }
+    if (alive_streams !== {}){
+        for (let key in alive_streams){
+            if (alive_streams[key] !== undefined){
+                alive_streams[key].end('bot automatically closed audio stream');
+            }
+        }
+    }
 }
 
 client.on('message', async message => {
@@ -61,7 +68,7 @@ client.once('voiceStateUpdate', (oldState, newState) => {
             const audio = connection_alive.receiver.createStream(user, {mode: 'opius', end: 'manual'});
             
             // remove audio stream when finished
-            audio.on('end', message => {alive_streams[user.id] = undefined;});
+            audio.on('end', message => {alive_streams.delete(user.id);});
 
             // repeat voice content on other channel when voice available
             audio.on('readable', () => {
